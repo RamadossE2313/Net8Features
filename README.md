@@ -10,3 +10,19 @@
  7. scope of the primary constructor is within the class body, so that we can assign the value for the parameter </br>
  </br>
 <b>Example</b> <a href="https://github.com/RamadossE2313/Net8Features/tree/main/PrimaryConstructor">Primary constructor</a>
+
+<h1>C#9 features</h1>
+<h4>Record</h4>
+<b>Example</b> <a href="https://github.com/RamadossE2313/Net8Features/blob/main/Records/EmployeeRecord.cs">Record</a>
+ <h5> Understanding of records </h5>
+ 1. Record is part of C#9 </br>
+ 2. Record is just a fancy class </br>
+ 3. Record is immutable, means you can assign the value through construtor </br>
+ 4. You can't change the value of record property once instance is created </br>
+ 5. We can say record as readonly class, means you can assign the value of the property in the intialiation and later you can't change it </br>
+ 6. it's a thread safe because two thread will use only read data so no issues will come
+
+ <h5> When to use records </h5>
+ 1. When the value can't change it.
+ 2. Reading data from database when changes are not required
+ 3. Processing data
