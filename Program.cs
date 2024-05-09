@@ -22,7 +22,7 @@ primaryConstructorWithPropertiesWithGet.Print();
 #endregion
 
 #region Record
-
+Console.WriteLine("******************* Record examples ************************");
 #region UnderstandingImmuntable
 EmployeeRecord employeeRecord = new("x", "y");
 // you can't change the value of the property of the record
@@ -62,6 +62,38 @@ Console.WriteLine($"Class Object are equal {Equals(employeeClass2, employeeClass
 
 //output of record will be like false, here record will compare actual address(reference)
 Console.WriteLine($"Class Object are equal {ReferenceEquals(employeeClass2, employeeClass3)}");
+#endregion
+
+#region Deconstruct
+Console.WriteLine("***************Deconstruct****************");
+/********************************* deconstruct supported by default in Record **********/
+EmployeeRecord employeeRecord4 = new("x", "y");
+var (firstName, lastName) = employeeRecord4;
+Console.WriteLine($"value of the records {firstName} {lastName}");
+
+/********************************* deconstruct not supported by default in Record, we have written method for that see it the employee class **********/
+EmployeeClass employeeClass4 = new("x", "y");
+var (firstNameclass, lastNameClass) = employeeClass4;
+Console.WriteLine($"value of the class {firstNameclass} {lastNameClass}");
+
+#endregion
+
+#region RecordWithPropAndMethods
+
+Console.WriteLine("*************RecordWithPropAndMethods************");
+EmployeeRecordWithPropAndMethods employeeRecordWithPropAndMethods = 
+    new EmployeeRecordWithPropAndMethods("FirstName", "LastName");
+
+Console.WriteLine($"Value of FirstName: {employeeRecordWithPropAndMethods.FirstName}");
+Console.WriteLine($"Value of FullName {employeeRecordWithPropAndMethods.FullName()}");
+#endregion
+
+#region RecordWithInheritance
+TemporaryEmployeeRecord temporaryEmployeeRecord = new(1, "Ramadoss", "E");
+Console.WriteLine($"temp {temporaryEmployeeRecord}");
+
+TemporaryEmployeeRecordWithPropAndMethods temporaryEmployeeRecordWithPropAndMethods = new(1, "Ramadoss", "E");
+Console.WriteLine($"FullName is : {temporaryEmployeeRecordWithPropAndMethods.FullName()}");
 #endregion
 
 #endregion
